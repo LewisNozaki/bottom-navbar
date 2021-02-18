@@ -1,4 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: lavender;
+  margin: 0;
+  padding: 0;
+  background: rgb(217, 153, 223);
   color: purple;
+}
+
+header {
+  background: purple;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* styling the label */
+.collapsible-menu label {
+  font-size: 3em;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* hiding the checkbox */
+.collapsible-menu input {
+  display: none;
+}
+
+/* hide the navbar list - default for mobile */
+.menu-items {
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* when checked, show navbar */
+#menu:checked ~ .menu-items {
+  max-height: 100%;
+}
+
+#menu:checked + #example span {
+  content: "\07";
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  padding: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: rgb(80, 2, 80);
+  color: white;
+}
+
+/* Anything screen from 750px and above */
+@media only screen and (min-width: 750px) {
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ul li a {
+    padding: 2em;
+  }
+
+  #example {
+    display: none;
+  }
+
+  .menu-items {
+    max-height: 100%;
+  }
 }
